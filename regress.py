@@ -11,5 +11,10 @@ print("\n")
 print(company_id)
 
 
-gsid_dataframe.plot(kind='scatter',x='growthScore',y='multipleScore',color='red')
+#gsid_dataframe.plot(kind='scatter',x='growthScore',y='multipleScore',color='red')
+#plt.title(company_id[0])
+#plt.show()
+
+gsid_dataframe.plot(kind='scatter',y='growthScore',x='date', color='blue')
+plt.title(company_id[0] + "growthScore vs date")
 plt.show()
