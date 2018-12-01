@@ -29,3 +29,4 @@ def save():
         merged = price_df.join(gsid_df)
         merged.to_csv("data/"+myGSID+".csv", encoding='utf-8', index=False)
 
+save()
