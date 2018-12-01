@@ -54,6 +54,7 @@ plt.suptitle(company_id[0] + ": Fundamental Attributes vs Time")
 plt.ylabel("Attribute Value")
 plt.xlabel("Date")
 
+
 merged.plot(x = 'date', y = 'close')
 plt.title(company_id[0] + ": Close Price vs Time")
 leg = plt.legend( loc = 'best')
