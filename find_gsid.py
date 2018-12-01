@@ -41,9 +41,12 @@ for i in range(len(todf)):
         gsidList.append(todf[i]['gsid'])
 
 df = pd.DataFrame({'gsid':gsidList})
+df.to_csv("data/gsid.csv", encoding = 'utf-8', index=False)
+'''
 outfile = open("data/gsid.txt", 'w')
 outfile.write(df.to_string())
 outfile.close()
+'''
 
 #with open('gsid.txt', 'w') as outfile
    # json.dump(results, outfile)

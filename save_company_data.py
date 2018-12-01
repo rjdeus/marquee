@@ -9,17 +9,18 @@ from sklearn.metrics import mean_squared_error, r2_score
 # call specific company gsid
 
 myGSID = "11308"
+
+df = pd.read_table('data\linked.txt')
+a = df[df.columns[0:1].tolist()]
+for i in a:
+    print(i)
+
+'''
 company_id, gsid_df = main(myGSID)
 # date range
 price_df = historicalPrice(gsid_df['date'].iloc[0],gsid_df['date'].iloc[-1])
 
-#gsid_dataframe.plot(kind='scatter',x='growthScore',y='multipleScore',color='red')
-#plt.title(company_id[0])
-#plt.show()
-
-#gsid_df.plot(kind='scatter',y='growthScore',x='date', color='blue')
-#plt.title(company_id[0] + "growthScore vs date")
-#plt.show()
+## print column names
 
 #print(list(price_df))
 #print(list(gsid_df))
@@ -33,12 +34,18 @@ print(merged)
 outfile = open("data/"+myGSID+".txt", 'a')
 outfile.write(merged.to_string())
 outfile.close()
-attributes = ['growthScore','financialReturnsScore','multipleScore','integratedScore']
+
+'''
+
+###attributes = ['growthScore','financialReturnsScore','multipleScore','integratedScore']
 '''
 plt.plot(merged['growthScore'])
 plt.plot(merged['financialReturnsScore'])
 plt.plot(merged['multipleScore'])
 plt.plot(merged['integratedScore'])
+'''
+
+#### Tables
 '''
 plt.rcParams["figure.figsize"] = [plt.rcParams["figure.figsize"][0] *2, plt.rcParams["figure.figsize"][1]]
 merged.plot(x = 'date', y = attributes)
@@ -56,7 +63,8 @@ plt.ylabel("Cost ($ US)")
 plt.xlabel("Date")
 #plt.savefig('costtime.png')
 plt.show()
-    
+'''
+
 '''
 plt.plot(merged['date'], merged['growthScore'])
 plt.title(company_id[0] + " growthScore over Time")
