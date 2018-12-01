@@ -7,5 +7,5 @@ def historicalPrice(dStart, dEnd):
 	df = df.drop('open', axis=1)
 	df = df.drop('high', axis=1)
 	df = df.drop('low', axis=1)
-	return df 
-
+	df.index = range(len(df))
+	return df
