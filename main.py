@@ -10,7 +10,9 @@ def main(gsidval):
     company_id = ticker(gsidval, ticker_url) # company_id = [company, gsid, ticker]
     #data = gsid(gsidval, gsid_url) # data = [growthScore, financialReturnsScore, multipleScore, integratedScore ]
     gsid_dataframe = gsid(gsidval, gsid_url) # datafram with gsid data (4 things, + date)
-    #print(gsid_dataframe)
-    #print(company_id)
-    return company_id, gsid_dataframe    
+
+    print(company_id, stprice)
+    print(gsid_dataframe)
+    return company_id, gsid_dataframe   
 main("11308")
+
