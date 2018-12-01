@@ -12,6 +12,6 @@ def main(gsidval):
     gsid_dataframe = gsid(gsidval, gsid_url) # dataframe with gsid data (4 things, + date)
     #print(company_id, stprice)
     #print(gsid_dataframe)
-    return company_id, gsid_dataframe   
+    return company_id, gsid_dataframe
 main("11308")
 
