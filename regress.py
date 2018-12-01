@@ -1,4 +1,5 @@
 from main import main
+from pricetest import historicalPrice
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
@@ -10,6 +11,7 @@ print(gsid_dataframe)
 print("\n")
 print(company_id)
 
+price_datafrane = historicalPrice()
 
 #gsid_dataframe.plot(kind='scatter',x='growthScore',y='multipleScore',color='red')
 #plt.title(company_id[0])
