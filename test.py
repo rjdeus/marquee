@@ -30,4 +30,4 @@ request_query = {
 
 request = session.post(url=request_url, json=request_query)
 results = json.loads(request.text)
-print(results['data'][0])
+print(results)
