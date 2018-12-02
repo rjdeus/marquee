@@ -6,11 +6,15 @@ import datetime as dt
 def regress(datatype,filename):
     dataset = pd.read_csv(filename)
 
+#####
+    lastdate = pd.to_datetime(dataset['date'].iloc[-1]).toordinal()
+    findate = pd.to_datetime('2018-06-05').toordinal()
+
+
     dataset['date']=pd.to_datetime(dataset['date'])
     dataset['date']=dataset['date'].map(dt.datetime.toordinal)
 
     X=dataset[['date']]
-    #print(lastday=X[-1])
     
     y=np.asarray(dataset[datatype])
 
@@ -24,13 +28,8 @@ def regress(datatype,filename):
     regressor.fit(X_train, y_train)
 
     #making predictions
-    print('X_test')
-    #print(type(X_test))
-    print(X_test)
     y_pred = regressor.predict(X_test)
     df = pd.DataFrame({'Actual' : y_test, 'Predicted' : y_pred})
-    #print('df')
-    #print(df)
 
     '''
     print(X_test)
@@ -38,29 +37,9 @@ def regress(datatype,filename):
     dates_new=pd.to_datetime(y_pred)
     dates_new=y_pred.map(dt.datetime.toordinal)
     '''
-
-    ##plt.scatter(X_test['date'],df['Actual'])
-    ##plt.scatter(X_test['date'],df['Predicted'])
-    ##plt.show()
-
-    '''
-    length=len(df.index)
-    print(length)
-    '''
     #*******PREDICT FUTURE VALS*****
-    '''
-    Xnew = [[51236]]
-    ynew=regressor.predict(Xnew)
-    print(ynew)
-    '''
-    lastdate = pd.to_datetime(dataset['date'].iloc[-1]).toordinal()
-    findate = pd.to_datetime('2018-06-05').toordinal()
-    Xnew=[i for i in range(lastdate,findate)]
+    Xnew=[i for i in range(lastdate+1,findate+1)]
     Xnewdf = pd.DataFrame({"Xnew":Xnew})
-    
-    print('Xnewdf')
-    print(Xnewdf)
-    print(type(Xnewdf))
     ynew=regressor.predict(Xnewdf)
     ynewdf = pd.DataFrame({datatype:ynew})
     
