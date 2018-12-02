@@ -6,11 +6,15 @@ import datetime as dt
 def regress(datatype,filename):
     dataset = pd.read_csv(filename)
 
+#####
+    lastdate = pd.to_datetime(dataset['date'].iloc[-1]).toordinal()
+    findate = pd.to_datetime('2018-06-05').toordinal()
+
+
     dataset['date']=pd.to_datetime(dataset['date'])
     dataset['date']=dataset['date'].map(dt.datetime.toordinal)
 
     X=dataset[['date']]
-    #print(lastday=X[-1])
     
     y=np.asarray(dataset[datatype])
 
@@ -27,28 +31,16 @@ def regress(datatype,filename):
     y_pred = regressor.predict(X_test)
     df = pd.DataFrame({'Actual' : y_test, 'Predicted' : y_pred})
 
-    print('\n')
-    print(df)
-
     '''
     print(X_test)
     print(y_pred)
     dates_new=pd.to_datetime(y_pred)
     dates_new=y_pred.map(dt.datetime.toordinal)
     '''
-
-    print('\n')
-    plt.scatter(X_test['date'],df['Actual'])
-    plt.scatter(X_test['date'],df['Predicted'])
-    plt.show()
-
-    '''
-    length=len(df.index)
-    print(length)
-
     #*******PREDICT FUTURE VALS*****
-    Xnew=[[736500]]
-    ynew=regressor.predict(Xnew)
-    print(ynew)
-    '''
-    return df
+    Xnew=[i for i in range(lastdate+1,findate+1)]
+    Xnewdf = pd.DataFrame({"Xnew":Xnew})
+    ynew=regressor.predict(Xnewdf)
+    ynewdf = pd.DataFrame({datatype:ynew})
+    
+    return df, ynewdf
