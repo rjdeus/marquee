@@ -93,7 +93,7 @@ for i in forecast_prediction:
 df['close'].plot(figsize=(15,6), color="green")
 df['forecast'].plot(figsize=(15,6), color="orange")
 plt.legend(loc=4)
-plt.title('APPLE INC')
+plt.title('NETFLIX INC')
 plt.xlabel('Date')
 plt.ylabel('Price')
 plt.show()
