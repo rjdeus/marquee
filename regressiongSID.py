@@ -24,11 +24,13 @@ def regress(datatype,filename):
     regressor.fit(X_train, y_train)
 
     #making predictions
+    print('X_test')
+    #print(type(X_test))
+    print(X_test)
     y_pred = regressor.predict(X_test)
     df = pd.DataFrame({'Actual' : y_test, 'Predicted' : y_pred})
-
-    print('\n')
-    print(df)
+    #print('df')
+    #print(df)
 
     '''
     print(X_test)
@@ -37,18 +39,29 @@ def regress(datatype,filename):
     dates_new=y_pred.map(dt.datetime.toordinal)
     '''
 
-    print('\n')
-    plt.scatter(X_test['date'],df['Actual'])
-    plt.scatter(X_test['date'],df['Predicted'])
-    plt.show()
+    ##plt.scatter(X_test['date'],df['Actual'])
+    ##plt.scatter(X_test['date'],df['Predicted'])
+    ##plt.show()
 
     '''
     length=len(df.index)
     print(length)
-
+    '''
     #*******PREDICT FUTURE VALS*****
-    Xnew=[[736500]]
+    '''
+    Xnew = [[51236]]
     ynew=regressor.predict(Xnew)
     print(ynew)
     '''
-    return df
+    lastdate = pd.to_datetime(dataset['date'].iloc[-1]).toordinal()
+    findate = pd.to_datetime('2018-06-05').toordinal()
+    Xnew=[i for i in range(lastdate,findate)]
+    Xnewdf = pd.DataFrame({"Xnew":Xnew})
+    
+    print('Xnewdf')
+    print(Xnewdf)
+    print(type(Xnewdf))
+    ynew=regressor.predict(Xnewdf)
+    ynewdf = pd.DataFrame({datatype:ynew})
+    
+    return df, ynewdf
