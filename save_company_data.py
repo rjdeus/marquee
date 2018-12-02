@@ -10,8 +10,7 @@ from sklearn.metrics import mean_squared_error, r2_score
 
 def save():
 
-    df = pd.read_csv('data\linked.csv')
-    #print(df)
+    df = pd.read_csv('linked.csv')
     aggregate = []
     for i in df.values:
         company = []
@@ -24,8 +23,9 @@ def save():
     for i in range(len(aggregate)):
         myGSID = aggregate[i][0]
         print(myGSID)
+        print(aggregate[i][2])
         company_id, gsid_df = main(myGSID)
-        price_df = historicalPrice(gsid_df['date'].iloc[0],gsid_df['date'].iloc[-1])
+        price_df = historicalPrice(aggregate[i][2], gsid_df['date'].iloc[0],gsid_df['date'].iloc[-1])
         merged = price_df.join(gsid_df)
         merged.to_csv("data/"+myGSID+".csv", encoding='utf-8', index=False)
-
+save()
