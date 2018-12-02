@@ -19,7 +19,7 @@ def save():
         company.append(str(a[0]))               ## GSID
         company.append(str(a[1].strip()))       ## NAME
         company.append(str(a[2].strip()))       ## TICKER
-        aggregate.append(company)
+        aggregate.append(company) 
 
     for i in range(len(aggregate)):
         myGSID = aggregate[i][0]
@@ -29,4 +29,3 @@ def save():
         merged = price_df.join(gsid_df)
         merged.to_csv("data/"+myGSID+".csv", encoding='utf-8', index=False)
 
-save()
