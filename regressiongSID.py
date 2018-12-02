@@ -10,7 +10,8 @@ def regress(datatype,filename):
     dataset['date']=dataset['date'].map(dt.datetime.toordinal)
 
     X=dataset[['date']]
-
+    #print(lastday=X[-1])
+    
     y=np.asarray(dataset[datatype])
 
     #80/20 split for training and test set
