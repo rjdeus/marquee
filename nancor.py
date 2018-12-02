@@ -5,7 +5,8 @@ import csv
 
 import numpy as np
 import matplotlib.pyplot as plt
-
+plt.style.use('ggplot')
+plt.legend(loc=4)
 mygsid = input("Input desired GSID:  ")
 
 plt.rcParams.update({'font.size': 7})
@@ -60,11 +61,11 @@ I=np.corrcoef(IntFactor, y)[0][1]
 
 
 f, (ax1, ax2, ax3, ax4,ax5) = plt.subplots(5, sharex=True, sharey=False)
-ax1.plot(date,y , 'r',label="Price")
-ax2.plot(date,Growth , 'b',label="Growth r="+str(G)[:5])
+ax1.plot(date,y , 'r',label="Price", color="blue")
+ax2.plot(date,Growth , 'b',label="Growth r="+str(G)[:5], color="yellow")
 ax3.plot(date,FinancialRet , 'g',label="FinancialRet  r="+str(F)[:5])
 ax4.plot(date,Multiple , 'c',label="Multiple r="+str(M)[:5])
-ax5.plot(date,IntFactor , 'm',label="IntFactor. r="+str(I)[:5])
+ax5.plot(date,IntFactor , 'm',label="IntFactor. r="+str(I)[:5], color="red")
 f.subplots_adjust(hspace=0)
 plt.setp([a.get_xticklabels() for a in f.axes[:-1]], visible=False)
 plt.xticks([1,100,200,300,380,460])
