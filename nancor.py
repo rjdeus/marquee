@@ -5,7 +5,8 @@ import csv
 
 import numpy as np
 import matplotlib.pyplot as plt
-
+plt.style.use('ggplot')
+plt.legend(loc=4)
 mygsid = input("Input desired GSID:  ")
 
 plt.rcParams.update({'font.size': 7})
