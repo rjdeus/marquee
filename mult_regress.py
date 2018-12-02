@@ -24,7 +24,7 @@ regressor = LinearRegression()
 regressor.fit(X_train, y_train)
 
 coeff_df = pd.DataFrame(regressor.coef_, X.columns, columns=['Coefficient'])
-#print(coeff_df)
+print(coeff_df)
 #print(len(coeff_df))
 
 #making predictions
@@ -37,8 +37,8 @@ df.sort_index(inplace=True)
 ### Join with Dates, output to graph, graphing actual to predicted prices
 
 add_dates = df.join(dataset['date'])
-print(add_dates)
-print(type(add_dates))
+#print(add_dates)
+#print(type(add_dates))
 
 #add_dates.plot(x = 'date', y = ['Actual','Predicted'])
 #plt.xlabel('Date')
@@ -47,9 +47,9 @@ print(type(add_dates))
 
 #evaluating performance of algorithm
 from sklearn import metrics
-###print('Mean Absolute Error:', metrics.mean_absolute_error(y_test, y_pred))  
-###print('Mean Squared Error:', metrics.mean_squared_error(y_test, y_pred))  
-###print('Root Mean Squared Error:', np.sqrt(metrics.mean_squared_error(y_test, y_pred)))
+print('Mean Absolute Error:', metrics.mean_absolute_error(y_test, y_pred))  
+print('Mean Squared Error:', metrics.mean_squared_error(y_test, y_pred))  
+print('Root Mean Squared Error:', np.sqrt(metrics.mean_squared_error(y_test, y_pred)))
 
 ## Predictive Model
 
@@ -110,17 +110,17 @@ DATES = np.concatenate((np.asarray(add_dates['date']), Xneww), axis = None)
 #toPrint = concat_df.join(add_dates['Actual']).join(pd.DataFrame({'date':DATES}))
 toPrint = concat_df.join(pd.DataFrame({'date':DATES}))
 toPrint.sort_values(by='date', ascending = True)
-print("----\n----\n----toPrint\n---\n---")
-print(toPrint)
-print(type(toPrint))
+#print("----\n----\n----toPrint\n---\n---")
+#print(toPrint)
+#print(type(toPrint))
 
 new_df = pd.merge(toPrint, add_dates, how='outer', on=['Predicted','date'])
-print("----\n----\n----")
-print("----\n----\n----")
-print("----\n----\n----")
+#print("----\n----\n----")
+#print("----\n----\n----")
+#print("----\n----\n----")
 print(new_df)
 
-new_df.plot(x = 'date', y = ['Actual','Predicted'])
+new_df.head(n=130).plot(x = 'date', y = ['Actual','Predicted'])
 plt.xlabel('Date')
 plt.ylabel('Price')
 plt.show()

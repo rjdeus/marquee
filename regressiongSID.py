@@ -28,9 +28,6 @@ def regress(datatype,filename):
     regressor.fit(X_train, y_train)
 
     #making predictions
-    #print('X_test')
-    #print(type(X_test))
-    #print(X_test)
     y_pred = regressor.predict(X_test)
     df = pd.DataFrame({'Actual' : y_test, 'Predicted' : y_pred})
     #print('df')
@@ -57,8 +54,6 @@ def regress(datatype,filename):
     ynew=regressor.predict(Xnew)
     print(ynew)
     '''
-    #lastdate = pd.to_datetime(dataset['date'].iloc[-1]).toordinal()
-    #findate = pd.to_datetime('2018-06-05').toordinal()
     Xnew=[i for i in range(lastdate+1,findate+1)]
     Xnewdf = pd.DataFrame({"Xnew":Xnew})
     ynew=regressor.predict(Xnewdf)
