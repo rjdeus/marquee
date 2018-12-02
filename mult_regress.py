@@ -6,11 +6,11 @@ from sklearn import preprocessing, svm
 from sklearn.linear_model import LinearRegression
 
 dataset = pd.read_csv('data/10516.csv')
-print(dataset.shape)
+#print(dataset.shape)
 #print(dataset.head())
 #print(dataset.describe())
 
-X = dataset[['integratedScore']]
+X = dataset[['growthScore','multipleScore','integratedScore','financialReturnsScore']]
 y = dataset['close']
 
 #80/20 split for training and test set
@@ -27,6 +27,9 @@ print(coeff_df)
 y_pred = regressor.predict(X_test)
 df = pd.DataFrame({'Actual' : y_test, 'Predicted' : y_pred})
 print(df)
+df.sort_index(inplace=True)
+print(df)
+
 
 #evaluating performance of algorithm
 from sklearn import metrics
@@ -43,4 +46,3 @@ plt.yticks(())
 
 plt.show()
 '''
-print(y_pred)
