@@ -1,4 +1,4 @@
-import quandl
+#import quandl
 import pandas as pd
 import numpy as np
 import datetime
@@ -10,7 +10,7 @@ plt.style.use('ggplot')
 from sklearn.linear_model import LinearRegression
 from sklearn import preprocessing, svm
 from sklearn.model_selection import train_test_split
-quandl.ApiConfig.api_key = "mXy8Yh9rUmwPNmQvnUAj"
+#quandl.ApiConfig.api_key = "mXy8Yh9rUmwPNmQvnUAj"
 
 Stock = input("Entert GSID of stock to predict ")
 
