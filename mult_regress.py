@@ -9,9 +9,6 @@ from sklearn.linear_model import LinearRegression
 
 myfile = 'data/10696.csv'
 dataset = pd.read_csv(myfile)
-#print(dataset.shape)
-#print(dataset.head())
-#print(dataset.describe())
 
 X = dataset[['growthScore','multipleScore','integratedScore','financialReturnsScore']]
 y = dataset['close']
@@ -25,25 +22,15 @@ regressor.fit(X_train, y_train)
 
 coeff_df = pd.DataFrame(regressor.coef_, X.columns, columns=['Coefficient'])
 print(coeff_df)
-#print(len(coeff_df))
 
 #making predictions
 y_pred = regressor.predict(X_test)
 df = pd.DataFrame({'Actual' : y_test, 'Predicted' : y_pred})
 df.sort_index(inplace=True)
 
-#print(df)
-
 ### Join with Dates, output to graph, graphing actual to predicted prices
 
 add_dates = df.join(dataset['date'])
-#print(add_dates)
-#print(type(add_dates))
-
-#add_dates.plot(x = 'date', y = ['Actual','Predicted'])
-#plt.xlabel('Date')
-#plt.ylabel('Price')
-#plt.show()
 
 #evaluating performance of algorithm
 from sklearn import metrics
@@ -90,17 +77,11 @@ y_future = regressor.predict(x_future_df)
 #print("y_future")
 #print(y_future)
 y_future_df = pd.DataFrame({'Predicted Values':y_future})
-#print("----\n----\n----y_future_df\n---\n---")
-#print(y_future_df)
-
 ## added future values
 concat = np.concatenate((np.asarray(add_dates['Predicted']), y_future), axis=None)
 #print(concat)
 #print(len(concat))
 concat_df = pd.DataFrame({'Predicted':concat})
-#print("----\n----\n----")
-#print(concat_df)
-
 ## added future dates
 DATES = np.concatenate((np.asarray(add_dates['date']), Xneww), axis = None)
 #print(len(add_dates['date']))
@@ -110,18 +91,11 @@ DATES = np.concatenate((np.asarray(add_dates['date']), Xneww), axis = None)
 #toPrint = concat_df.join(add_dates['Actual']).join(pd.DataFrame({'date':DATES}))
 toPrint = concat_df.join(pd.DataFrame({'date':DATES}))
 toPrint.sort_values(by='date', ascending = True)
-#print("----\n----\n----toPrint\n---\n---")
-#print(toPrint)
-#print(type(toPrint))
 
 new_df = pd.merge(toPrint, add_dates, how='outer', on=['Predicted','date'])
-#print("----\n----\n----")
-#print("----\n----\n----")
-#print("----\n----\n----")
 print(new_df)
 
 new_df.head(n=130).plot(x = 'date', y = ['Actual','Predicted'])
 plt.xlabel('Date')
 plt.ylabel('Price')
 plt.show()
-

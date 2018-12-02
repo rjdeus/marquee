@@ -39,21 +39,7 @@ def regress(datatype,filename):
     dates_new=pd.to_datetime(y_pred)
     dates_new=y_pred.map(dt.datetime.toordinal)
     '''
-
-    ##plt.scatter(X_test['date'],df['Actual'])
-    ##plt.scatter(X_test['date'],df['Predicted'])
-    ##plt.show()
-
-    '''
-    length=len(df.index)
-    print(length)
-    '''
     #*******PREDICT FUTURE VALS*****
-    '''
-    Xnew = [[51236]]
-    ynew=regressor.predict(Xnew)
-    print(ynew)
-    '''
     Xnew=[i for i in range(lastdate+1,findate+1)]
     Xnewdf = pd.DataFrame({"Xnew":Xnew})
     ynew=regressor.predict(Xnewdf)
