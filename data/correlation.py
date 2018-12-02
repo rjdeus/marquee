@@ -3,6 +3,9 @@ import pandas as pd
 import os
 import csv
 
+import numpy as np
+import matplotlib.pyplot as plt
+
 rootdir = '/Users/mhn/Desktop/marquee/data'
 
 CORval=[]
