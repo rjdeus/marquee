@@ -27,6 +27,9 @@ print(coeff_df)
 y_pred = regressor.predict(X_test)
 df = pd.DataFrame({'Actual' : y_test, 'Predicted' : y_pred})
 print(df)
+df.sort_index(inplace=True)
+print(df)
+
 
 #evaluating performance of algorithm
 from sklearn import metrics
