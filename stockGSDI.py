@@ -12,7 +12,9 @@ from sklearn import preprocessing, svm
 from sklearn.model_selection import train_test_split
 #quandl.ApiConfig.api_key = "mXy8Yh9rUmwPNmQvnUAj"
 
-df = pd.read_csv('data/10516.csv')
+Stock = input("Entert GSID of stock to predict ")
+
+df = pd.read_csv('data/'+str(Stock)+'.csv')
 df = df[['close', 'volume','growthScore','multipleScore','integratedScore','financialReturnsScore','date']]
 length = 30 
 
@@ -91,6 +93,7 @@ for i in forecast_prediction:
 df['close'].plot(figsize=(15,6), color="green")
 df['forecast'].plot(figsize=(15,6), color="orange")
 plt.legend(loc=4)
+plt.title('APPLE INC')
 plt.xlabel('Date')
 plt.ylabel('Price')
 plt.show()
