@@ -48,7 +48,7 @@ forecast_prediction = clf.predict(X_forecast)
 
 
 
-'''
+
 print(forecast_prediction)
 print(realPrice)
 
@@ -60,4 +60,3 @@ t= list(range(30))
 plt.plot(t,forecast_prediction,'r')
 plt.plot(t, realPrice, 'b')
 plt.show()
-'''
