@@ -30,8 +30,6 @@ def regress(datatype,filename):
     #making predictions
     y_pred = regressor.predict(X_test)
     df = pd.DataFrame({'Actual' : y_test, 'Predicted' : y_pred})
-    #print('df')
-    #print(df)
 
     '''
     print(X_test)

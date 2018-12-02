@@ -56,9 +56,7 @@ Xnew=[i for i in range(lastdate+1,findate+1)]
 Xneww = []
 for i in Xnew:
     Xneww.append(dt.datetime.fromordinal(i).strftime("%Y-%m-%d"))
-#print (pd.DataFrame({'date': Xneww}))
-
-
+	
 print("Predictive Model")
 
 _, gS_new = regress('growthScore',myfile)
@@ -67,28 +65,14 @@ _, iS_new = regress('integratedScore',myfile)
 _, fRS_new = regress('financialReturnsScore',myfile)
 x_future = [gS_new, mS_new, iS_new, fRS_new]
 x_future_df = pd.DataFrame({'gS_New':gS_new['growthScore'], 'mS_New':mS_new['multipleScore'], 'iS_New':iS_new['integratedScore'],'fRS_New': fRS_new['financialReturnsScore']})
-#print("x_future_df")
-#print(x_future_df)
 y_future = regressor.predict(x_future_df)
 
-#print("np_asarray of add_dates['Predicted']")
-#print(np.asarray(add_dates['Predicted']))
-
-#print("y_future")
-#print(y_future)
 y_future_df = pd.DataFrame({'Predicted Values':y_future})
 ## added future values
 concat = np.concatenate((np.asarray(add_dates['Predicted']), y_future), axis=None)
-#print(concat)
-#print(len(concat))
 concat_df = pd.DataFrame({'Predicted':concat})
 ## added future dates
 DATES = np.concatenate((np.asarray(add_dates['date']), Xneww), axis = None)
-#print(len(add_dates['date']))
-#print(type(add_dates['Actual']))
-
-#print (concat_df.join(add_dates['Actual']).join(pd.DataFrame({'date':DATES})))
-#toPrint = concat_df.join(add_dates['Actual']).join(pd.DataFrame({'date':DATES}))
 toPrint = concat_df.join(pd.DataFrame({'date':DATES}))
 toPrint.sort_values(by='date', ascending = True)
 
