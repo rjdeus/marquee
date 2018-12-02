@@ -8,9 +8,13 @@ plt.style.use('ggplot')
 from sklearn.linear_model import LinearRegression
 from sklearn import preprocessing, svm
 from sklearn.model_selection import train_test_split
-quandl.ApiConfig.api_key = "mXy8Yh9rUmwPNmQvnUAj"
+quandl.ApiConfig.api_key = "dexFh9F13zbczB-4KeBo"
 
-df = quandl.get("WIKI/AMZN")
+Stock = input("Entert TICKER of stock to predict: ")
+
+df = quandl.get('WIKI/'+str(Stock))
+print(df)
+
 df = df[['Adj. Close', 'Adj. Volume']]
 length = 30 
 
@@ -52,20 +56,22 @@ one_day = 86400 #number of se in a day
 next_unix = last_unix + one_day #next day in unix 
 
 
-print(datetime.datetime.fromtimestamp(next_unix))
-'''
+
 
 for i in forecast_prediction:
     next_date = datetime.datetime.fromtimestamp(next_unix)
-    print(datetime.datetime.fromtimestamp(next_unix))
+    datetime.datetime.fromtimestamp(next_unix)
     next_unix += 86400
     df.loc[next_date] = [np.nan for _ in range(len(df.columns)-1)]+[i]
  
 
 df['Adj. Close'].plot(figsize=(15,6), color="green")
 df['forecast'].plot(figsize=(15,6), color="orange")
+plt.xlim(xmin=datetime.date(2012, 5, 26),xmax=datetime.date(2019, 1, 1))
+plt.title('SALES FORCE')
 plt.legend(loc=4)
 plt.xlabel('Date')
 plt.ylabel('Price')
 plt.show()
-'''
+
+
