@@ -4,5 +4,3 @@ __pycache__
 
 find_gsid.py
 link_gsid_name.py
-*.png
-*.txt

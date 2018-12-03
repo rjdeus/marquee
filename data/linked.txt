@@ -1,0 +1,101 @@
+      gsid                          name ticker
+0    75154                 Carnival Corp    CCL
+1   193067   Lumber Liquidators Holdings     LL
+2   902608     Check Point Software Tech   CHKP
+3    85627  Sonic Automotive Inc-Class A    SAH
+4    13901              Altria Group Inc     MO
+5   150407              Wynn Resorts LTD   WYNN
+6   161467            Salesforce.com Inc    CRM
+7    82598                    Netapp Inc   NTAP
+8    11896     Maxim Integrated Products   MXIM
+9   177256            Mastercard Inc - A     MA
+10   49154                   Target Corp    TGT
+11   76605                  Autozone Inc    AZO
+12  173578          Verifone Systems Inc    PAY
+13   85914               Best Buy Co Inc    BBY
+14   75100                  Tiffany & Co    TIF
+15  149756                   Netflix Inc   NFLX
+16  213305                     Tesla Inc   TSLA
+17   79758              Boyd Gaming Corp    BYD
+18   69796    Constellation Brands Inc-A    STZ
+19   81116         Veeco Instruments Inc   VECO
+20   76226   CBS Corp-Class B Non Voting    CBS
+21   80791                    Adtran Inc   ADTN
+22  152963            Seagate Technology    STX
+23  197235       Visa Inc-Class A Shares      V
+24  227284          Facebook Inc-Class A     FB
+25  222946                   Groupon Inc   GRPN
+26   25022          Comcast Corp-Class A  CMCSA
+27   61621                   Paychex Inc   PAYX
+28  902704                      Flex LTD   FLEX
+29  216587     Fleetcor Technologies Inc    FLT
+30  901237          Juniper Networks Inc   JNPR
+31   80286        Tractor Supply Company   TSCO
+32   77659         Bed Bath & Beyond Inc   BBBY
+33   15579         Texas Instruments Inc    TXN
+34   16600                Hershey Co/the    HSY
+35  216722             General Motors Co     GM
+36   75573              Office Depot Inc    ODP
+37   53065  Interpublic Group of Cos Inc    IPG
+38   84769            Amphenol Corp-CL A    APH
+39   46922                 Rite Aid Corp    RAD
+40   13936                      PVH Corp    PVH
+41  193155            Vmware Inc-Class A    VMW
+42   91556               Ross Stores Inc   ROST
+43   64064         Costco Wholesale Corp   COST
+44   79265              Flir Systems Inc   FLIR
+45  151048     Dick's Sporting Goods Inc    DKS
+46  176665             Expedia Group Inc   EXPE
+47   46886               Kla-Tencor Corp   KLAC
+48  183414               First Solar Inc   FSLR
+49   70500   Coca-Cola European Partners   CCEP
+50   16432     Goodyear Tire & Rubber Co     GT
+51   86196   Ultimate Software Group Inc   ULTI
+52   11308              Coca-Cola Co/the     KO
+53   55976                   Walmart Inc    WMT
+54  188804                 Infinera Corp   INFN
+55   26825                    Kellogg Co      K
+56  183269                Shutterfly Inc   SFLY
+57  172890                       Wex Inc    WEX
+58  905288           Global Payments Inc    GPN
+59   29209         Arrow Electronics Inc    ARW
+60   10516     Archer-Daniels-Midland Co    ADM
+61   75607                 Symantec Corp   SYMC
+62   16678                     Kroger Co     KR
+63   44644     Automatic Data Processing    ADP
+64  223416              Zynga Inc - CL A   ZNGA
+65   26403            Walt Disney Co/the    DIS
+66   59248    Molson Coors Brewing Co -B    TAP
+67   78975                    Intuit Inc   INTU
+68   78045       Magna International Inc    MGA
+69   12490   Intl Business Machines Corp    IBM
+70   40539             TJX Companies Inc    TJX
+71  198025                      Dana Inc    DAN
+72   10696                    Fiserv Inc   FISV
+73   22293                   Corning Inc    GLW
+74   66384          Western Digital Corp    WDC
+75   85517        Choice Hotels Intl Inc    CHH
+76  217708      Cornerstone Ondemand Inc   CSOD
+77   79145   Royal Caribbean Cruises LTD    RCL
+78   85631                  Autodesk Inc   ADSK
+79   86356                      Ebay Inc   EBAY
+80  905255                    Garmin LTD   GRMN
+81   14593                     Apple Inc   AAPL
+82   85072             Ralph Lauren Corp     RL
+83  188329         Cinemark Holdings Inc    CNK
+84  148401   Regal Entertainment Group-A    RGC
+85  202271                  Broadcom Inc   AVGO
+86  194688               Ulta Beauty Inc   ULTA
+87   86372       Cgi Group Inc - Class A    GIB
+88   84275      United Natural Foods Inc   UNFI
+89  230958           Workday Inc-Class A   WDAY
+90   59010                   Gap Inc/the    GPS
+91  226278     Michael Kors Holdings LTD   KORS
+92  903917       Akamai Technologies Inc   AKAM
+93   18163       Procter & Gamble Co/the     PG
+94   46578                Clorox Company    CLX
+95   18729          Colgate-Palmolive Co     CL
+96   17750           Kimberly-Clark Corp    KMB
+97  193324       Lululemon Athletica Inc   LULU
+98   53613         Micron Technology Inc     MU
+99  905632    Alliance Data Systems Corp    ADS
