@@ -20,7 +20,7 @@ length = 30
 
 
 
-forecast_out = int(30)
+forecast_out = int(120)
 df['Prediction'] = df[['Adj. Close']].shift(-forecast_out)
 print(df)
 
